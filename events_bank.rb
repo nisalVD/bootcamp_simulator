@@ -27,7 +27,11 @@ class DataBank
       sixth_event = {
         test: "One of your classmates, #{name}, suggests that you collaborate on a project together. Unfortunately, the project is a bit basic and won't really test your skills. Do you: ",
         options: [["Accept the offer - you'll get the chance to refresh your funadmental skills and help your classmate.", 6, 4], ["Apologise and indicate that you're too busy. You can better spend this time working on your highly sophisticated text-based RPG project.", -3, 13], ["You might be able to help later, but right now you need a coffee."]]
-      }
+      },
+      seven_event = {
+        test: "#{teacher_name} is impressed by your work and asks you to sit next to #{name} who is struggling. Do you: ",
+        options: [["Agree. You Accept the offer - you'll get the chance to refresh your funadmental skills and help your classmate.", 6, 4], ["Apologise and indicate that you're too busy. You can better spend this time working on your highly sophisticated text-based RPG project.", -3, 13], ["You might be able to help later, but right now you need a coffee."]]
+      },
     ]
   end
 
@@ -40,6 +44,18 @@ class DataBank
       return name #this calls upon the same method to pick a different name in the event it has already been used
     else
       past_class_mates << name_generated #adds the used name to the array
+      return name_generated
+    end
+  end
+
+  def teacher_name
+    teachers = ["Reugen", "Patrick", "Matt"]
+    past_teachers = [] #an array to ensure that the same name is not re-used during a daily cycle
+    name_generated = teachers.sample
+    if past_teachers.include? name_generated
+      return name #this calls upon the same method to pick a different name in the event it has already been used
+    else
+      past_teachers << name_generated #adds the used name to the array
       return name_generated
     end
   end
