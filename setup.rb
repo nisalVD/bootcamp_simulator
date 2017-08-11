@@ -10,13 +10,15 @@ def setup_character
     setup_character
   end
   character = Character.new(user_name)
+  character.social = 0
+  character.coding_skill = 0
   system 'clear'
 
   allocation_points = 20
 
 
   puts "OK #{user_name}, you have just #{allocation_points.to_s} points to allocate between three natural abilities that will help you on your journey to becoming a programmer: INTELLIGENCE, SOCIAL AWARENESS, PERSISTENCE. And most importantly, RESPONSE TO COFFEE.\n\n".green
-  puts "Press enter to continue...\n".blue
+  puts "Press enter to continue...".blue
   gets
 
   def setup_intel(character, allocation_points)
@@ -93,8 +95,10 @@ def setup_character
     end
     character.coffee_response = coffee_response
     # do something
-      puts "set up successful"
+      puts "\n\nSet up successful!".green
+      puts "\n\nEnter to start the course!".blue
       gets
+      welcome(character)
   end
 
   setup_intel(character, allocation_points)

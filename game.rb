@@ -3,6 +3,7 @@ require 'pry'
 
 require_relative 'setup'
 require_relative 'character'
+require_relative 'days'
 
 def welcome_menu
   system 'clear'
