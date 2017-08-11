@@ -28,9 +28,13 @@ class DataBank
         test: "One of your classmates, #{name}, suggests that you collaborate on a project together. Unfortunately, the project is a bit basic and won't really test your skills. Do you: ",
         options: [["Accept the offer - you'll get the chance to refresh your funadmental skills and help your classmate.", 6, 4], ["Apologise and indicate that you're too busy. You can better spend this time working on your highly sophisticated text-based RPG project.", -3, 13], ["You might be able to help later, but right now you need a coffee."]]
       },
-      seven_event = {
+      seventh_event = {
         test: "#{teacher_name} is impressed by your work and asks you to sit next to #{name} who is struggling. Do you: ",
-        options: [["Agree. You Accept the offer - you'll get the chance to refresh your funadmental skills and help your classmate.", 6, 4], ["Apologise and indicate that you're too busy. You can better spend this time working on your highly sophisticated text-based RPG project.", -3, 13], ["You might be able to help later, but right now you need a coffee."]]
+        options: [["Agree. You enjoy helping people and explaining things helps you to understand better. Plus #{name} lent you some cutlery that time when you forgot to bring a fork.", 5, 5], ["Yeeeaannah. You've got work to do and don't want n00bs holding you up", -5, 15], ["No time to save seats, you've got to make an espresso run."]]
+      },
+      eighth_event = {
+        test: "#{name} keeps interupting#{teacher_name} is impressed by your work and asks you to sit next to #{name} who is struggling. Do you: ",
+        options: [["Agree. You enjoy helping people and explaining things helps you to understand better. Plus #{name} lent you some cutlery that time when you forgot to bring a fork.", 5, 5], ["Yeeeaannah. You've got work to do and don't want n00bs holding you up", -5, 15], ["No time to save seats, you've got to make an espresso run."]]
       },
     ]
   end
