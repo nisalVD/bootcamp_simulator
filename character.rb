@@ -28,6 +28,13 @@ class Character
     def coffee_crash
         
     end
+    def findscore
+        social = self.social
+        coding_skill = self.coding_skill
+        |social - cooding_skill|
+        final_score = social + coding_skill - |social - coding_skill|
+        return final_score
+    end
 end 
 
 nathaniel = Character.new('Nathaniel')
