@@ -57,15 +57,15 @@ class Character
     end
 end 
 
-nathaniel = Character.new('Nathaniel')
-nathaniel.intellect = 10.0
-nathaniel.social = 10.0
-nathaniel.base_social = 1.0
-nathaniel.coding_skill = 1.0
-nathaniel.adjust_social(-5.0)
-nathaniel.adjust_coding_skill(-5.0)
-nathaniel.coffee_response = 3
-nathaniel.persistence = 2
-puts nathaniel.findscore
-original_array = nathaniel.coffee_drink
-original_array = nathaniel.coffee_crash(original_array)
+# nathaniel = Character.new('Nathaniel')
+# nathaniel.intellect = 10.0
+# nathaniel.social = 10.0
+# nathaniel.base_social = 1.0
+# nathaniel.coding_skill = 1.0
+# nathaniel.adjust_social(-5.0)
+# nathaniel.adjust_coding_skill(-5.0)
+# nathaniel.coffee_response = 3
+# nathaniel.persistence = 2
+# puts nathaniel.findscore
+# original_array = nathaniel.coffee_drink
+# original_array = nathaniel.coffee_crash(original_array)
