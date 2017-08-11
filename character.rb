@@ -18,15 +18,21 @@ class Character
     end
 
     def coffee_drink
+        original_stats = []
+        original_stats << self.intellect
         @intellect = self.intellect * self.coffee_response
+        original_stats = [] << self.persistence
         @persistence = self.persistence * self.coffee_response
+        original_stats = [] << self.base_social
         @base_social = self.base_social * self.coffee_response
         @coffee_response = self.coffee_response - 1
-
+        return original_stats
     end
 
-    def coffee_crash
-        
+    def coffee_crash(original_stats)
+        @intellect = original_stats[0]
+        @persistence = original_stats[1]
+        @base_social = original_stats[2]
     end
 end 
 
