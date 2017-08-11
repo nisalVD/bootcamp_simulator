@@ -11,10 +11,9 @@ class Character
         if social_points > 0
             @social = @base_social * (social_points / 20.0) + @social
             puts "\nYou gained #{social_points} social points!".green
-        else 
+        elsif social_points < 0
             @social = @social + social_points
-            puts "\nYou lost #{social_points} social points... Not going to have any
-            friends at this rate...".green
+            puts "\nYou lost #{social_points} social points... Not going to have any friends at this rate...".green
         end
         puts "\nYour social score is now #{@social}. Remember to balance social and coding points!".green
     end
@@ -23,7 +22,7 @@ class Character
         if coding_skill > 0 
             @coding_skill = @intellect * (coding_skill / 20.0) + @coding_skill
             "\nYou gained #{coding_skill} coding points!".green
-        else 
+        elsif coding_skill < 0 
             @coding_skill = @coding_skill + coding_skill
             puts "\nYou lost #{coding_skill} coding points... Get back to work!".green
         end

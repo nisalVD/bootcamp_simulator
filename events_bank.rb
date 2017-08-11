@@ -30,11 +30,11 @@ class DataBank
       },
       seventh_event = {
         test: "#{teacher_name} is impressed by your work and asks you to sit next to #{name} who is struggling. Do you: ",
-        options: [["Agree. You enjoy helping people and explaining things helps you to understand better. Plus #{name} lent you some cutlery that time when you forgot to bring a fork.", 5, 5], ["Yeeeaannah. You've got work to do and don't want n00bs holding you up", -5, 15], ["No time to save seats, you've got to make an espresso run."]]
+        options: [["Agree. You enjoy helping people and explaining things helps you to understand better. Plus they lent you some cutlery that time when you forgot to bring a fork.", 5, 5], ["Yeeeaannah. You've got work to do and don't want n00bs holding you up", -5, 15], ["No time to save seats, you've got to make an espresso run."]]
       },
       eighth_event = {
-        test: "#{name} keeps interupting#{teacher_name} is impressed by your work and asks you to sit next to #{name} who is struggling. Do you: ",
-        options: [["Agree. You enjoy helping people and explaining things helps you to understand better. Plus #{name} lent you some cutlery that time when you forgot to bring a fork.", 5, 5], ["Yeeeaannah. You've got work to do and don't want n00bs holding you up", -5, 15], ["No time to save seats, you've got to make an espresso run."]]
+        test: "#{name} keeps interupting #{teacher_name} during class. Do you: ",
+        options: [["Raise your hand and ask for them to be removed from class.", -8, 18], ["Wait till break time and have a quiet word.", 10, 0], ["You can't hear anyway, might as well grab a cappuccino."]]
       },
     ]
   end
