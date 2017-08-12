@@ -56,6 +56,7 @@ def setup_character
       failed_allocation(allocated_points)
     end
     character.base_social = social_awareness
+    character.original_stats_array
     setup_persistence(character, allocation_points, allocated_points)
   end
 

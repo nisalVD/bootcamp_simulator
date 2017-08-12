@@ -2,10 +2,11 @@ require 'colorize'
 
 class Character
     def initialize(name)
-        @name = name      
+        @name = name
+        @original_stats = []
     end
     attr_accessor :name, :intellect, :persistence, :base_social, :social, 
-    :coffee_response, :coding_skill
+    :coffee_response, :coding_skill, :coffee_used, :original_stats
 
     def adjust_social(social_points)
         if social_points > 0
@@ -30,23 +31,22 @@ class Character
     end
 
     def coffee_drink
-        original_stats = []
-        original_stats[0] = @intellect
-        @intellect = @intellect * @coffee_response
-        original_stats[1] = @persistence
-        @persistence = @persistence * @coffee_response
-        original_stats[2] = @base_social
-        @base_social = @base_social * @coffee_response
-        puts "\nYour intellect, persistence and base social stats have all been boosted by #{@coffee_response}!".green
+        @intellect = @intellect * @coffee_response / 2.0
+        @base_social = @base_social * @coffee_response / 2.0
+        puts "\nYour intellect, and base social stats have all been multiplied by #{@coffee_response / 2.0}!".green
         @coffee_response = @coffee_response - 1
-        return original_stats
+        if coffee_response == 2
+            puts "You have drank too much coffee and now have the ability to see through time. Unfortunately you are now immune to coffee".green
+        elsif coffee_response < 2
+            puts "Your coffee response is less than 0 and is now having a detrimental effect... You coffee addict".red
+        end
+        @coffee_used = true
     end
 
-    def coffee_crash(original_stats)
-        @intellect = original_stats[0]
-        @persistence = original_stats[1]
-        @base_social = original_stats[2]
-        original_stats = nil
+    def coffee_crash
+        @intellect = @original_stats[0]
+        @base_social = @original_stats[1]
+        @coffee_used = false
     end
 
     def findscore
@@ -55,5 +55,11 @@ class Character
         initial_score = social - coding_skill
         final_score = social + coding_skill - initial_score.abs
         return final_score
+    end
+
+    def original_stats_array
+        original_intellect = @intellect
+        original_base_social = @base_social
+        @original_stats = [original_intellect, original_base_social]
     end
 end 
