@@ -10,8 +10,8 @@ require_relative 'end_game'
 require_relative 'events_bank'
 require_relative 'character'
 require_relative 'events_class'
-require_relative 'high_score'
-require_relative 'high_score_list'
+# require_relative 'high_score'
+# require_relative 'high_score_list'
 
 #high scores list set up, make available at end game
 # high_scores = (
