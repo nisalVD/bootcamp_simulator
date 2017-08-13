@@ -2,8 +2,11 @@ require 'colorize'
 require 'pry'
 
 require_relative 'setup'
+require_relative 'weeks'
+require_relative 'end_game'
+require_relative 'events_bank'
 require_relative 'character'
-require_relative 'days'
+require_relative 'events_class'
 
 def welcome_menu
   system 'clear'

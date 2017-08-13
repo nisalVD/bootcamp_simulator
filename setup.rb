@@ -2,7 +2,7 @@ def setup_character
 
   system 'clear'
   print "Please enter your name: ".blue
-  user_name = String(gets).strip rescue nil
+  user_name = String(gets).strip.capitalize rescue nil
   if user_name.length == 0
     puts "\nYou can't enrol without a name".red
     puts "\nPress enter to continue...\n".blue
