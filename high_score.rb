@@ -5,6 +5,7 @@ class HighScore
     @name = player[:name]
     @coding = player[:coding] 
     @social = player[:social] 
+    #@total_score = player[:total_score]
     @job = player[:job] 
     @date = player[:date]
   end

@@ -76,7 +76,7 @@ def milestones(character, weeks_per_term, week_no, term)
         puts "Congratualtions #{character.name}!!\n\nYou have finished term #{term}! You have learned #{fourth_term_syllabus}.\n\nYour coding score is now #{character.coding_skill.round(0)}. Your social score is #{character.social.round(0)}. What now???".green
         puts "\nEnter to continue...".blue
         gets
-        end_of_game #calls the end of game function (in end_game file)
+        end_of_game(character) #calls the end of game function (in end_game file)
       else
         week(character, weeks_per_term, week_no, term)
       end

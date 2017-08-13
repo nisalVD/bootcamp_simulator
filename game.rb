@@ -11,8 +11,8 @@ require_relative 'end_game'
 require_relative 'events_bank'
 require_relative 'character'
 require_relative 'events_class'
-require_relative 'high_score'
-require_relative 'high_score_list'
+# require_relative 'high_score'
+# require_relative 'high_score_list'
 
 #high scores list set up, make available at end game
 # high_scores = (
@@ -37,7 +37,7 @@ def welcome_menu
 |    ~~~~     [-----]  |
 !______________________!\n".green
 
-  puts "\n1. Start new game \n2. About Coder Academy \n3. Exit".blue
+  puts "\n1. Start new game \n2. View high scores \n3. About Coder Academy \n4. Exit".blue
   literal_response = gets.strip
   response = literal_response.to_i
 
@@ -49,12 +49,14 @@ def welcome_menu
     when 1
       setup_character
     when 2
+      show_high_scores
+    when 3
       system 'clear'
       puts contact_dets
       puts "\nEnter to return to main menu...".blue
       gets
       welcome_menu
-    when 3
+    when 4
       system 'clear'
       puts "Why leave? Can't hack it?\n\n".red
       abort
