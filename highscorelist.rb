@@ -4,24 +4,17 @@ require 'date'
 scores = [
   {
   name: 'Alan',
-  date: ,
-  coding: ,
-  social: ,
-  job: ,
+  date: Date.today,
+  coding: 100,
+  social: 100,
+  job: 'Google',
   },
   {
   name: 'Ada',
-  date: ,
-  coding: ,
-  social: ,
-  job: ,
-  },
-  {
-  name: ,
-  date: ,
-  coding: ,
-  social: ,
-  job: ,
+  date: Date.today,
+  coding: 100,
+  social: 100,
+  job: 'Google',
   }
 ]
 
