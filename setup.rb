@@ -61,7 +61,7 @@ def setup_character
 
   def setup_persistence(character, allocation_points, allocated_points)
     puts "\nYou have #{allocation_points - allocated_points} points remaining.\n".green
-    print "How many to persistence? This will determine how much work you do each day. ".blue
+    print "How many to persistence? This will determine how much work you do each week. ".blue
     persistence = Integer(gets) rescue nil
     if persistence == nil
       puts "\nPlease only use whole numbers\nTry again...".red
