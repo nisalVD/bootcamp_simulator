@@ -1,5 +1,3 @@
-require 'colorize'
-
 class Character
     def initialize(name)
         @name = name

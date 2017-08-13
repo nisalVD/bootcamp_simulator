@@ -1,6 +1,3 @@
-require 'colorize'
-require_relative 'character'
-
 class Events  
 
   def initialize

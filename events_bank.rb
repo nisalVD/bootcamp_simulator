@@ -34,7 +34,7 @@ class DataBank
       },
       eighth_event = {
         test: "#{name} keeps interupting #{teacher_name} during class. Do you: ",
-        options: [["Raise your hand and ask for them to be removed from class.", -8, 18], ["Wait till break time and have a quiet word.", 10, 0], ["You can't hear anyway, might as well grab a cappuccino."]]
+        options: [["Raise your hand and ask for them to be removed from class.", 18, -8], ["Wait till break time and have a quiet word.", 10, 0], ["You can't hear anyway, might as well grab a cappuccino."]]
       },
     ]
   end

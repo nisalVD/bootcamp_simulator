@@ -2,7 +2,7 @@ def setup_character
 
   system 'clear'
   print "Please enter your name: ".blue
-  user_name = String(gets).strip rescue nil
+  user_name = String(gets).strip.capitalize rescue nil
   if user_name.length == 0
     puts "\nYou can't enrol without a name".red
     puts "\nPress enter to continue...\n".blue
@@ -62,7 +62,7 @@ def setup_character
 
   def setup_persistence(character, allocation_points, allocated_points)
     puts "\nYou have #{allocation_points - allocated_points} points remaining.\n".green
-    print "How many to persistence? This will determine how much work you do each day. ".blue
+    print "How many to persistence? This will determine how much work you do each week. ".blue
     persistence = Integer(gets) rescue nil
     if persistence == nil
       puts "\nPlease only use whole numbers\nTry again...".red
