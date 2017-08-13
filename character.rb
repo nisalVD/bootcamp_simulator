@@ -14,13 +14,13 @@ class Character
             @social = @social + social_points
             puts "\nYou lost #{social_points} social points... Not going to have any friends at this rate...".green
         end
-        puts "\nYour social score is now #{@social}. Remember to balance social and coding points!".green
+        puts "\nYour social score is now #{@social}.".green
     end
 
     def adjust_coding_skill(coding_skill)
         if coding_skill > 0 
             @coding_skill = @intellect * (coding_skill / 20.0) + @coding_skill
-            "\nYou gained #{coding_skill} coding points!".green
+            puts "\nYou gained #{coding_skill} coding points!".green
         elsif coding_skill < 0 
             @coding_skill = @coding_skill + coding_skill
             puts "\nYou lost #{coding_skill} coding points... Get back to work!".green
