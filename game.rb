@@ -3,6 +3,7 @@ require 'pry'
 
 require_relative 'setup'
 require_relative 'weeks'
+require_relative 'milestones'
 require_relative 'end_game'
 require_relative 'events_bank'
 require_relative 'character'
