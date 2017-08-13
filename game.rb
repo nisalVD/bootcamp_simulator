@@ -1,5 +1,6 @@
 require 'colorize'
 require 'pry'
+require 'date'
 
 # Game methods:
 require_relative 'setup'

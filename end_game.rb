@@ -21,6 +21,7 @@ def high_scores_add(character)
     coding: coding,
     social: social,
     job: job,
+    date: Date.today
   }
 
   player_score = HighScore.new(player)
