@@ -1,14 +1,24 @@
 require 'colorize'
 require 'pry'
 
+# Game methods:
 require_relative 'setup'
 require_relative 'weeks'
 require_relative 'milestones'
 require_relative 'end_game'
+# Classes:
 require_relative 'events_bank'
 require_relative 'character'
 require_relative 'events_class'
+require_relative 'high_score'
+require_relative 'high_score_list'
 
+#high scores list set up, make available at end game
+# high_scores = (
+
+# )
+
+# Game slash screen and entry
 def welcome_menu
   system 'clear'
   puts "\n\n    =CODER ACADEMY=    ".black.on_cyan
@@ -55,4 +65,5 @@ def welcome_menu
   end
 end  
 
+# It all starts at this function
 welcome_menu
