@@ -17,7 +17,7 @@ def setup_character
   allocation_points = 25
 
 
-  puts "OK #{user_name}, you have just #{allocation_points.to_s} points to allocate between five abilities that will help you on your journey to becoming a programmer: INTELLIGENCE, SOCIAL AWARENESS, PERSISTENCE, SLEEP. And most importantly, RESPONSE TO COFFEE.\n\n".green
+  puts "OK #{user_name}, you're going to become a junior dev in just 6 months! You have #{allocation_points.to_s} points to allocate between five abilities that will help you on your journey to becoming a programmer: INTELLIGENCE, SOCIAL AWARENESS, PERSISTENCE, SLEEP. And most importantly, RESPONSE TO COFFEE.\n\n".green
   puts "Press enter to continue...".blue
   gets
 
@@ -100,7 +100,7 @@ def setup_character
 
   def setup_coffee(character, allocation_points, allocated_points)
     puts "\n... #{allocation_points - allocated_points} points left ...\n".green
-    print "And finally, how responsive are you to coffee? When you drink coffee you'll learn faster! But don't drink too much...".blue
+    print "And finally, how responsive are you to coffee? When you drink coffee you'll learn faster! But don't drink too much... ".blue
     coffee_response = Integer(gets) rescue nil
     if coffee_response == nil
       puts "\nPlease only use whole numbers\nTry again...".red
@@ -116,7 +116,7 @@ def setup_character
     character.coffee_response = coffee_response
     # do something
       puts "\n\nSet up successful!".green
-      puts "\n\nEnter to start the course!".blue
+      puts "\n\nPress enter to start the course!".blue
       gets
       welcome(character)
   end
