@@ -45,4 +45,5 @@ def events(n, events, data, character) #loops n + 3 events, consitituing one 'da
   total_events.times do
     events.random_event_script(data.events, data.class_mates, character)
   end
+  character.coffee_crash
 end

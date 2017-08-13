@@ -23,16 +23,23 @@ class Events
     end
   end
 
+
   def user_choice(random_event, character)
     response = gets.chomp.downcase
     case response
     when "a"
         character.adjust_social(random_event[:options][0][1]) #returns social points
         character.adjust_coding_skill(random_event[:options][0][2]) #return coding points
+        if character.coffee_used == true
+            character.coffee_crash
+        end
         gets
     when "b"
         character.adjust_social(random_event[:options][0][1])
         character.adjust_coding_skill(random_event[:options][0][2])
+        if character.coffee_used == true
+            character.coffee_crash
+        end
         gets
     when "c" 
         character.coffee_drink
