@@ -9,7 +9,7 @@ def welcome(character)
   puts "Hello #{character.name}, welcome to CODER ACADEMY! \n\nOver the next four terms we are not just going to teach you to code. We are going to teach you what it takes to become junior developer …".green
   puts "\nPress enter to continue...".blue
   gets
-  puts "\n…you will need to learn to program, to work as a team, and to be resilient and resourceful.".green
+  puts "\n… you will need to learn to program, to work as a team, and to be resilient and resourceful.".green
   puts "\nPress enter to continue...".blue
   gets
   puts "\nAnd of course along the way there’ll be plenty of coffee to drink. Do you have what it takes to work at Google, #{character.name}? \n\nAre you ready to start your first week?".green
@@ -27,21 +27,21 @@ def week(character, weeks_per_term, week_no, term)
 
     # sleep mechanic
     if week_no > 1
-      sleep_index = rand(10) # Random number between 0 and 9 ()    
-      if sleep_index > 6 # 7,8,9 high, bonus points
+      sleep_index = rand(25) + character.sleep # Random number between 0 and 25    
+      if sleep_index > 16
         character.social = character.social + 5
         character.coding_skill = character.coding_skill + 5
-        sleep_qual = "You are sleeping well and have consolidated what you learned last week. +5 points to social and coding!"
-      elsif sleep_index < 3 #0,1,2 low, negative
-        sleep_qual = "You are sleeping poorly and have forgotten some of the things you learned last week. -5 points to social and coding..."
+        sleep_qual = "You are sleeping well. You're feeling happy and over the weekend you've consolidated last week's lessons. +5 points to social and coding!"
+      elsif sleep_index < 8 
+        sleep_qual = "You are sleeping poorly. You are grumpy and have forgotten some of the things you learned last week. -5 points to social and coding..."
         character.social = character.social - 5
         character.coding_skill = character.coding_skill - 5
-      else # 3,4,5 middle, no bonus
+      else 
         sleep_qual = "You are sleeping OK."
       end
     end
 
-    puts "\nIt is week #{term_week} of term #{term}. #{sleep_qual}".green
+    puts "\nIt is week #{term_week} of term #{term}. #{sleep_qual}\n".green
     puts daily_events(character.persistence, event_generator, data_source, character)
     week_no = week_no + 1
 
@@ -65,9 +65,4 @@ def events(n, events, data, character) #loops n + 3 events, consitituing one 'we
   total_events.times do
     events.random_event_script(data.events, data.class_mates, character)
   end
-end
-
-def sleep_mechanic
-
-
 end

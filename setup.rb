@@ -14,10 +14,10 @@ def setup_character
   character.coding_skill = 0
   system 'clear'
 
-  allocation_points = 20
+  allocation_points = 25
 
 
-  puts "OK #{user_name}, you have just #{allocation_points.to_s} points to allocate between three natural abilities that will help you on your journey to becoming a programmer: INTELLIGENCE, SOCIAL AWARENESS, PERSISTENCE. And most importantly, RESPONSE TO COFFEE.\n\n".green
+  puts "OK #{user_name}, you have just #{allocation_points.to_s} points to allocate between five abilities that will help you on your journey to becoming a programmer: INTELLIGENCE, SOCIAL AWARENESS, PERSISTENCE, SLEEP. And most importantly, RESPONSE TO COFFEE.\n\n".green
   puts "Press enter to continue...".blue
   gets
 
@@ -33,8 +33,8 @@ def setup_character
       setup_intel(character, allocation_points)
     end
     allocated_points = intelligence
-    if allocated_points > 20    
-      failed_allocation(allocated_points)
+    if allocated_points > allocation_points    
+      failed_allocation(allocation_points, allocated_points)
     end
     character.intellect = intelligence
     setup_social(character, allocation_points, allocated_points)
@@ -52,8 +52,8 @@ def setup_character
       setup_social(character, allocation_points, allocated_points)
     end
     allocated_points = allocated_points + social_awareness
-    if allocated_points > 20
-      failed_allocation(allocated_points)
+    if allocated_points > allocation_points
+      failed_allocation(allocation_points, allocated_points)
     end
     character.base_social = social_awareness
     character.original_stats_array
@@ -72,16 +72,35 @@ def setup_character
       setup_persistence(character, allocation_points, allocated_points)
     end
     allocated_points = allocated_points + persistence
-    if allocated_points > 20
-      failed_allocation(allocated_points)
+    if allocated_points > allocation_points
+      failed_allocation(allocation_points, allocated_points)
     end
     character.persistence = persistence
+    setup_sleep(character, allocation_points, allocated_points)
+  end
+
+  def setup_sleep(character, allocation_points, allocated_points)
+    puts "\nYou have #{allocation_points - allocated_points} points remaining.\n".green
+    print "How many to sleep? This will determine how likely you are to get a good night's sleep. ".blue
+    sleep = Integer(gets) rescue nil
+    if sleep == nil
+      puts "\nPlease only use whole numbers\nTry again...".red
+      setup_sleep(character, allocation_points, allocated_points)
+    elsif sleep < 0
+      puts "\nYou can't use a negative value...\nTry again...".red
+      setup_sleep(character, allocation_points, allocated_points)
+    end
+    allocated_points = allocated_points + sleep
+    if allocated_points > allocation_points
+      failed_allocation(allocation_points, allocated_points)
+    end
+    character.sleep = sleep
     setup_coffee(character, allocation_points, allocated_points)
   end
 
   def setup_coffee(character, allocation_points, allocated_points)
     puts "\n... #{allocation_points - allocated_points} points left ...\n".green
-    print "And finally, how responsive are you to coffee? When you drink coffee you'll learn faster! ".blue
+    print "And finally, how responsive are you to coffee? When you drink coffee you'll learn faster! But don't drink too much...".blue
     coffee_response = Integer(gets) rescue nil
     if coffee_response == nil
       puts "\nPlease only use whole numbers\nTry again...".red
@@ -91,8 +110,8 @@ def setup_character
       setup_coffee(character, allocation_points, allocated_points)
     end
     allocated_points = allocated_points + coffee_response
-    if allocated_points > 20
-      failed_allocation(allocated_points)
+    if allocated_points > allocation_points
+      failed_allocation(allocation_points, allocated_points)
     end
     character.coffee_response = coffee_response
     # do something
@@ -106,11 +125,11 @@ def setup_character
 
 end
 
-def failed_allocation(allocated_points)
+def failed_allocation(allocation_points, allocated_points)
   system 'clear'
-  puts "\n\n\You have allocated #{allocated_points} points. 20 minus #{allocated_points} equals #{20 - allocated_points}".red
+  puts "\n\n\You have allocated #{allocated_points} points. #{allocation_points} minus #{allocated_points} equals #{allocation_points - allocated_points}".red
   sleep 2
-  puts "\n\n\nWell, if you can't count to 20, then perhaps this course is not for you.".red
+  puts "\n\n\nWell, if you can't count to #{allocation_points}, then perhaps this course is not for you.".red
   puts "\n\nEnter to continue...".blue
   gets
   welcome_menu

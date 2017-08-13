@@ -4,7 +4,7 @@ class Character
         @original_stats = []
     end
     attr_accessor :name, :intellect, :persistence, :base_social, :social, 
-    :coffee_response, :coding_skill, :coffee_used, :original_stats
+    :coffee_response, :coding_skill, :coffee_used, :original_stats, :sleep
 
     def adjust_social(social_points)
         if social_points > 0
@@ -29,14 +29,63 @@ class Character
     end
 
     def coffee_drink
+        timelord = "
+        .   *        .       .
+        *      -0-
+           .                .  *       - )-
+        .      *       o       .       *
+  o                |
+            .     -O-
+ .                 |        *      .     -0-
+        *  o     .    '       *      .        o
+               .         .        |      *
+    *             *              -O-          .
+          .             *         |     ,
+                 .           o
+         .---.
+   =   _/__~0_\_     .  *            o       '
+  = = (_________)             .
+                  .                        *
+        *               - ) -       *
+               .               .
+        ".cyan
+        negative_response = "
+        _____
+        /ZZZZZ)
+        |____/
+        \_____\
+        |ZZZZZ|___
+      .'(\ @ @)_. 
+        /;   > )-
+        \\; `--'
+          \\,'/
+       ___|;|___
+      >xXX>O<XXx<
+        ".cyan
         @intellect = @intellect * @coffee_response / 2.0
         @base_social = @base_social * @coffee_response / 2.0
         puts "\nYour intellect, and base social stats have all been multiplied by #{@coffee_response / 2.0}!".green
+        puts "\n
+        )))
+        (((
+      +-----+
+      |     |]
+      `-----'   
+    ___________
+    `---------'
+        ".cyan
         @coffee_response = @coffee_response - 1
         if coffee_response == 2
-            puts "You have drank too much coffee and now have the ability to see through time. Unfortunately you are now immune to coffee".green
+            @sleep = -5
+            system 'clear'
+            puts "You have drank too much coffee and now have the ability to see through time.".green
+            gets
+            puts timelord
+            puts "\nUnfortunately you are now immune to coffee and are having trouble sleeping.".green
         elsif coffee_response < 2
-            puts "Your coffee response is less than 0 and is now having a detrimental effect... You coffee addict".red
+            @sleep = -10
+            puts "\n...Oops!Your coffee response is less than 0 and is now having a detrimental effect... You coffee addict".red
+            puts negative_response
         end
         @coffee_used = true
     end
@@ -60,4 +109,5 @@ class Character
         original_base_social = @base_social
         @original_stats = [original_intellect, original_base_social]
     end
+
 end 
