@@ -9,23 +9,21 @@ class Character
     def adjust_social(social_points)
         if social_points > 0
             @social = @base_social * (social_points / 20.0) + @social
-            puts "\nYou gained #{social_points} social points!".green
+            puts "\nYou gained #{@base_social * (social_points / 20.0)} social points!".green
         elsif social_points < 0
             @social = @social + social_points
             puts "\nYou lost #{social_points} social points... Not going to have any friends at this rate...".green
         end
-        puts "\nYour social score is now #{@social}.".green
     end
 
     def adjust_coding_skill(coding_skill)
         if coding_skill > 0 
             @coding_skill = @intellect * (coding_skill / 20.0) + @coding_skill
-            puts "\nYou gained #{coding_skill} coding points!".green
+            puts "\nYou gained #{@intellect * (coding_skill / 20.0)} coding points!".green
         elsif coding_skill < 0 
             @coding_skill = @coding_skill + coding_skill
             puts "\nYou lost #{coding_skill} coding points... Get back to work!".green
         end
-        puts "\nYour coding score is now #{@coding_skill}. Remember to balance social and coding points!".green
     end
 
     def coffee_drink
@@ -64,7 +62,7 @@ class Character
         ".cyan
         @intellect = @intellect * @coffee_response / 2.0
         @base_social = @base_social * @coffee_response / 2.0
-        puts "\nYour intellect, and base social stats have all been multiplied by #{@coffee_response / 2.0}!".green
+        puts "\nYour intellect, and base social stats have both been multiplied by #{@coffee_response / 2.0}!".green
         puts "\n
         )))
         (((

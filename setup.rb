@@ -113,7 +113,7 @@ def setup_character
     if allocated_points > allocation_points
       failed_allocation(allocation_points, allocated_points)
     end
-    character.coffee_response = coffee_response
+    character.coffee_response = coffee_response + 3
     # do something
       puts "\n\nSet up successful!".green
       puts "\n\nPress enter to start the course!".blue
