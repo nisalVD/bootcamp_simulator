@@ -76,7 +76,14 @@ class DataBank
         test: "A wild Ruegen appeared!",
         options: [["Test your coding skills in battle and try to catch it", 0, 15], ["Make friends with this magestic creature, you never know when you might need a Ruegen", 5, 6], ["Leave him alone in the wild and go get some coffee"]]
       },
-
+      {
+        test: "Your in a group project and you feel certain that you could do all the work easily by yourself. Do you:",
+        options: [["Smash out all the work yourself, you're a coding master!", -8, 8], ["Delegate the work between your peers, you're a team player!", 5, 5], ["Order coffees for all!"]]
+      },
+      {
+        test: "You are at the club, having a boogie, when suddenly you remember that there are still more coding challenges to do. Do you:",
+        options: [["Quickly reach for another drink and forget all other coding thoughts. Phew, that was a close one!", 5, -4], ["Push your way through the crowd and to the exit! You're on a mission here!", 0, 8], ["Order a espresso martini. You'll probably be able to think your way through the challenge with the caffeine boost!"]]
+      },
     ]
   end
 
