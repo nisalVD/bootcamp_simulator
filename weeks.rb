@@ -61,7 +61,7 @@ def daily_events(persistence, events, data, character) #generates the boost ('n,
 end
 
 def events(n, events, data, character) #loops n + 3 events, consitituing one 'week'
-  total_events = 3 + n
+  total_events = 1 + n
   total_events.times do
     events.random_event_script(data.events, data.class_mates, character)
   end

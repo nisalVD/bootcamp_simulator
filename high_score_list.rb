@@ -5,7 +5,7 @@ require 'yaml'
 
 class HighScoreList
 
-  attr_accessor :scores :list_display :add_score
+  attr_accessor :scores, :list_display, :add_score
 
   def initialize
     @scores = []
