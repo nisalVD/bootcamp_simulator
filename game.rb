@@ -52,6 +52,7 @@ def welcome_menu
     when 2
       system 'clear'
       high_score_list.list_display
+      gets
       welcome_menu
     when 3
       system 'clear'

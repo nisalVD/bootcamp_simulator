@@ -15,15 +15,15 @@ class HighScoreList
   def add_score(character, total_score)
     if File.file?('high_score_list.yaml')
       @scores = YAML.load_file('high_score_list.yaml')
-      @scores << [character.name.green, total_score, Date.today.to_s.green] 
+      @scores << [character.name.green, total_score, Date.today] 
       @scores = scores.sort_by { |entry| entry[1] }.reverse
       File.open('high_score_list.yaml', 'w') do |out|
-        YAML.dump scores.to_yaml, out
+        out.write @scores.to_yaml
       end
     else
-      @scores << [character.name.green, total_score, Date.today.to_s.green]
+      @scores << [character.name.green, total_score, Date.today]  
       File.open('high_score_list.yaml', 'w') do |out|
-        YAML.dump @scores, out
+        out.write @scores.to_yaml
       end
     end        
   end
@@ -40,7 +40,6 @@ class HighScoreList
       puts table
     else
       puts "No scores to display - begin your game to add the first high score!".green 
-      gets
     end
   end
 

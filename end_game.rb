@@ -35,15 +35,15 @@ def end_of_game(character)
   puts "...\n#{job_text}".cyan
   
   puts "\nEnter to continue...".blue
-  gets
+  high_score_list = HighScoreList.new
+  final_score = character.findscore
+  high_score_list.add_score(character, final_score)
   end_game_menu(character, job)
+  gets
 end
 
 def end_game_menu(character, job)
-    high_score_list = HighScoreList.new
-    final_score = character.findscore
-    high_score_list.add_score(character, final_score)
-
+    high_score_list = HighScoreList.new 
     system 'clear'
     puts "  CODER ACADEMY  ".black.on_cyan
     puts "\nCongratulations on completing Coder Academy, #{character.name}! You got a job at #{job}".green
