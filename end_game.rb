@@ -1,23 +1,51 @@
 
 def end_of_game(character)  
+    final_score = character.findscore
+    
+    case
+      when final_score > 200
+        job = "Google!"  
+        job_text = "Flying cars, aritifical intelligence, access to the personal data of every person in theworld... the future is yours!"
+      when final_score > 150
+        job = "Facebook!" 
+        job_text = "The pay is good and it turns out Zuckerberg is an OK dude!"
+      when final_score > 100
+        job = "Atlassian, one of Australia's fastest growing startups." 
+        job_text = "You are considered a promising Junior Dev!"
+      when final_score > 80
+        job = "a new start up called OzBiz." 
+        job_text = "Your pay is ordinary but you got options in the company! Let's hope it la sts till the float..."
+      when final_score > 60
+        job = "Commonwealth Bank working with their dev team." 
+        job_text = "A solid job with good pay."
+      when final_score > 40
+        job = "working on HTML as Jim's Websites franchise." 
+        job_text = "Well, at least you get to be your own boss, right?"
+      when final_score > 30
+        job = "the local coucil doing data entry." 
+        job_text = "It's $24 an hour, but you get all the coffee you can drink."
+      when final_score <= 30
+        job = "at Woolworths working the checkouts." 
+        job_text = "On the plus side, you get double time on Sundays."
+      end
+
   system 'clear'
-  puts "Put some text here"
+  puts "After a gruelling course, your final coding ability is #{character.coding_skill} and your social skill is #{character.social}.".green
+  puts "\nYou got a job at #{job}".cyan
+  puts "...\n#{job_text}".cyan
   
   puts "\nEnter to continue...".blue
   gets
-  end_game_menu(character)
+  end_game_menu(character, job)
 end
 
-def high_scores_add(character)
-
-end
-
-def end_game_menu(character)
+def end_game_menu(character, job)
     high_score_list = HighScoreList.new
-    high_score_list.add_score(character.name, character.findscore)
+    score = character.findscore
+
     system 'clear'
     puts "  CODER ACADEMY  ".black.on_cyan
-    puts "Congratulations on completing Coder Academy, #{character.name}!".green
+    puts "\nCongratulations on completing Coder Academy, #{character.name}! You got a job at #{job}".green
   
     puts "\n1. Epilogue... Class of #{Time.new.year} \n2. View high scores! \n3. Game credits \n4. Exit game".blue
     literal_response = gets.strip
@@ -25,24 +53,24 @@ def end_game_menu(character)
   
     case response
       when 1
-        class_of_year(character)
+        class_of_year(character, job)
       when 2
         high_score_list.list_display
-        end_game_menu(character)
+        end_game_menu(character, job)
       when 3
-        game_credits_flow(character)
+        game_credits_flow(character, job)
       when 4
         welcome_menu
       else
         puts "\nI don't know what you mean by '#{literal_response}'?".red
         puts "\nPress enter to try again...".red
         gets
-      end_game_menu(character)
+      end_game_menu(character, job)
     end
     
 end
 
-def class_of_year(character)
+def class_of_year(character, job)
   where_are_they_now = [
     "Charles Babbage (1791 – 1871) went on to be credited with inventing the first mechanical computer that eventually led to more complex electronic designs. All the essential ideas of modern computers are to be found in Babbage's analytical engine.",
     "Ada Lovelace (1815 – 1852) went on to be the first to recognise that Charles Babbage’s mechanical computer had applications beyond pure calculation, and created the first algorithm intended to be carried out by such a machine. As a result, she became regarded as the first to recognise the full potential of a 'computing machine' and the first computer programmer.",
@@ -53,22 +81,25 @@ def class_of_year(character)
     "Jean Bartik (1924 – 2011) went on to work on the ENIAC at the University of Pennsylvania. Since it was one of the first computers of its time, she developed and codified many of the fundamentals of programming.",
     "Richard Stallman (born 1953) went on to campaign for software to be distributed in a manner such that its users receive the freedoms to use, study, distribute and modify that software. Stallman eventually launched the GNU Project, founded the Free Software Foundation, developed the GNU Compiler Collection and GNU Emacs, and wrote the GNU General Public License.",
     "Tim Berners-Lee (born 1955) went on to invent of the World Wide Web. He implemented the first successful communication between a Hypertext Transfer Protocol (HTTP) client and server via the internet in mid-November 1989.",
-    "Barbara Grosz went on to specialise in natural language processing and multi-agent systems. She developed some of the earliest computer dialogue systems and established the research field of computational modelling of discourse."
+    "Barbara Grosz went on to specialise in natural language processing and multi-agent systems. She developed some of the earliest computer dialogue systems and established the research field of computational modelling of discourse.",
   ]
+
   system 'clear'
   puts "\nClass of #{Time.new.year} ...\n".black.on_cyan
-  where_are_they_now.each do |i|
+  i = 0
+  where_are_they_now.each do |class_mate|
     puts "#{where_are_they_now[i]}\n".green
     puts "...".blue
+    i = i + 1
     gets
   end
   puts "\nEnter to continue...".blue
   gets
-  end_game_menu(character)
+  end_game_menu(character, job)
 
 end
 
-def game_credits_flow(character)
+def game_credits_flow(character, job)
   game_credits = [
     "ASCII art courtesy of Andreas Freise: (http://www.ascii-art.de)", 
     "Computer scientist biographies courtesy of Wikiedia (https://en.wikipedia.org)",
@@ -80,34 +111,16 @@ def game_credits_flow(character)
   system 'clear'
   puts "   CODER ACADEMY  ".black.on_cyan
   puts "     The game".cyan
-  game_credits.each do |i|
-    puts "\n#{game_credits[i]}".green
-    sleep 1
+  i = 0
+  game_credits.each do |item|
+    puts "\n --- #{game_credits[i]}\n".green
+    i = i + 1
+    sleep 2
   end
 
   puts "\nEnter to continue...".blue
   gets
-  end_game_menu(character)
+  end_game_menu(character, job)
 end
 
-def final_job(character)
-  final_score = character.findscore
-  case final_score
-    when
-      job = "Google - the future is yours!"
-    when
-      job = "Facebook - the pay is good and it turns out Zuckerberg is an OK dude."
-    when
-      job = "Atlassian, one of Australia's fastest growing startups. You are considered an promising Junior Dev!"
-    when
-      job = "a new start up called OzBiz. Your pay is ordinary but you got options in the company! Let's hope it lasts till the float..."
-    when
-      job = "Commonwealth Bank working with their dev team. A solid job with good pay."
-    when
-      job = "working on HTML as Jim's Websites franchise. Well, at least you get to be your own boss, right?"
-    when
-      job = "the local coucil doing data entry. It's $24 an hour, but you get all the coffee you can drink."
-    when
-      job = "at Woolworths working on the checkouts. On the plus side, you get double time on Sundays."
-  end
-end
+
