@@ -1,5 +1,5 @@
+
 def end_of_game(character)  
-  
   system 'clear'
   puts "Put some text here"
   
@@ -13,6 +13,8 @@ def high_scores_add(character)
 end
 
 def end_game_menu(character)
+    high_score_list = HighScoreList.new
+    high_score_list.add_score(character.name, character.findscore)
     system 'clear'
     puts "  CODER ACADEMY  ".black.on_cyan
     puts "Congratulations on completing Coder Academy, #{character.name}!".green
@@ -25,7 +27,8 @@ def end_game_menu(character)
       when 1
         class_of_year(character)
       when 2
-        show_high_scores(character)
+        high_score_list.list_display
+        end_game_menu(character)
       when 3
         game_credits_flow(character)
       when 4
@@ -36,7 +39,7 @@ def end_game_menu(character)
         gets
       end_game_menu(character)
     end
-  end  
+    
 end
 
 def class_of_year(character)
