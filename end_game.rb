@@ -41,7 +41,8 @@ end
 
 def end_game_menu(character, job)
     high_score_list = HighScoreList.new
-    score = character.findscore
+    final_score = character.findscore
+    high_score_list.add_score(character, final_score)
 
     system 'clear'
     puts "  CODER ACADEMY  ".black.on_cyan
@@ -56,6 +57,7 @@ def end_game_menu(character, job)
         class_of_year(character, job)
       when 2
         high_score_list.list_display
+        gets
         end_game_menu(character, job)
       when 3
         game_credits_flow(character, job)
