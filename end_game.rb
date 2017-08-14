@@ -36,7 +36,7 @@ def end_of_game(character)
   puts "\nYou got a job at #{job}".cyan
   puts "...\n#{job_text}".cyan 
   puts "\nEnter to continue...".blue
-  gets
+  victory
   end_game_menu(character, job)
 end
 

@@ -3,6 +3,7 @@ require 'pry'
 require 'date'
 
 # Game methods:
+require_relative 'sound'
 require_relative 'setup'
 require_relative 'weeks'
 require_relative 'milestones'
@@ -37,6 +38,7 @@ def welcome_menu
 |    ~~~~     [-----]  |
 !______________________!\n".green
 
+  start_music
   puts "\n1. Start new game \n2. View high scores \n3. About Coder Academy \n4. Exit".blue
   literal_response = gets.strip
   response = literal_response.to_i

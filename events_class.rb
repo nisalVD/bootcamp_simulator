@@ -1,3 +1,5 @@
+require_relative 'sound'
+
 class Events  
 
   def initialize
@@ -16,6 +18,9 @@ class Events
       puts "\nA. ".blue + random_event[:options][0][0].blue
       puts "B. ".blue + random_event[:options][1][0].blue
       puts "C. ".blue + random_event[:options][2][0].blue
+      if random_event == events_bank[17]
+        battle
+      end
       puts user_choice(random_event, character)
     end
   end
