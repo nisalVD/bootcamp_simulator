@@ -37,7 +37,7 @@ class DataBank
         options: [["Raise your hand and ask for them to be removed from class.", -8, 18], ["Wait till break time and have a quiet word.", 10, 0], ["You can't hear anyway, might as well grab a cappuccino."]]
       },
       {
-        test: "#{name} asks you to attend a ruby meetup with him",
+        test: "#{name} asks you to attend a Ruby meetup together. Do you: ",
         options: [["Accept and attend the meetup with them", 10, 5], ["Decline their offer and work on your personal project", -5, 10], ["Screw this I want coffee"]]
       },
       {
@@ -70,7 +70,7 @@ class DataBank
       },
       {
         test: "Mark Zuckerburg has come in today to give the class a talk, but you feel an itch to code right now...",
-        options: [["Listen to his speech and be enligted", 10, 5], ["Code away like a mad man", 0, 5], ["I could listen and code at the same time if I go get some coffee..."]]
+        options: [["Listen to his speech and be enlightened", 10, 5], ["Code away like a mad man", 0, 5], ["I could listen and code at the same time if I go get some coffee..."]]
       },
       {
         test: "A wild Ruegen appeared!",
