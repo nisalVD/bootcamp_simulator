@@ -1,28 +1,48 @@
 require 'terminal-table'
 require 'date'
+require 'colorize'
+require 'yaml'
 
 class HighScoreList
-  attr_accessor :scores :table
 
-  table = Terminal::Table.new :title => "Coder Academy - The Game: High Scores", :headings => ['Player Name', 'Date', 'Total Score'], :rows => rows
+  attr_accessor :scores :list_display :add_score
 
   def initialize
-      @scores = []
+    @scores = []
+  end
+
+  #this method first checks whether a YAML file containing player scores (as an array of arrays) exists. If it does, it loads the file, appends the current player score, sorts the score list according to score size, and closes the file. If not, it creates a new file with the current player score.
+  def add_score(player, total_score)
+    if File.file?('high_score_list.yaml')
+      @scores = YAML.load_file('high_score_list.yaml')
+      @scores << [player.cyan, total_score.cyan, Date.today.cyan] 
+      @scores = scores.sort_by { |entry| entry[2] }
+      File.open('high_score_list.yaml', 'w') do |out|
+        YAML.dump scores, out
+      end
+    else
+      @scores << [player.cyan, total_score.cyan, Date.today.cyan]
+      File.open('high_score_list.yaml', 'w') do |out|
+        YAML.dump scores, out
+      end
+    end        
+  end
+
+  #this method check whether a YAML file containing player scores exists. If so, it loads the file and adds each player's name, score and date as a row in the high score table.
+  def list_display
+    if File.file?('high_score_list.yaml')
+      @scores = YAML.load_file('high_score_list.yaml')
+      table = Terminal::Table.new :title => "Coder Academy - The Game: High Scores".cyan, :headings => ['Player Name'.cyan, 'Date'.cyan, 'Total Score'.cyan], :rows => rows
+      rows = []
+      scores.each do |entry|
+        rows << entry
+      puts table
+      gets
+      end
+    else
+      puts "No scores to display - begin your game to add the first high score!".green 
+      gets
     end
   end
-
-  def add_score(player, total_score)
-    @scores << [[player],[total_score],[Date.today]]
-  end
-
-  # def update_yaml
-  # end
-
-  # def publish
-  # end
-
-      if File.file?('high_score_list.yaml')
-      @scores = YAML.load_file('high_score_list.yaml')
-    else
 
 end

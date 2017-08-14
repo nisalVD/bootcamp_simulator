@@ -12,7 +12,7 @@ require_relative 'events_bank'
 require_relative 'character'
 require_relative 'events_class'
 # require_relative 'high_score'
-# require_relative 'high_score_list'
+require_relative 'high_score_list'
 
 #high scores list set up, make available at end game
 # high_scores = (
@@ -21,6 +21,7 @@ require_relative 'events_class'
 
 # Game slash screen and entry
 def welcome_menu
+  high_score_list = HighScoreList.new
   system 'clear'
   puts "\n\n    =CODER ACADEMY=    ".black.on_cyan
   puts " 
@@ -49,7 +50,8 @@ def welcome_menu
     when 1
       setup_character
     when 2
-      show_high_scores
+      system 'clear'
+      high_score_list.list_display
     when 3
       system 'clear'
       puts contact_dets
