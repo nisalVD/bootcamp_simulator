@@ -18,7 +18,6 @@ require_relative 'high_score_list'
 # high_scores = (
 
 # )
-
 # Game slash screen and entry
 def welcome_menu
   high_score_list = HighScoreList.new

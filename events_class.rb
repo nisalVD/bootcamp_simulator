@@ -30,7 +30,7 @@ class Events
         if character.coffee_used == true
             character.coffee_crash
         end
-        puts "\nYour social score is now #{character.social} and coding score is #{character.coding_skill}. Remember to balance your social and coding score!".green
+        puts "\nYour social score is now #{character.social.round(1)} and coding score is #{character.coding_skill.round(1)}. Remember to balance your social and coding score!".green
         gets
     when "b"
         character.adjust_social(random_event[:options][1][1])
@@ -38,7 +38,7 @@ class Events
         if character.coffee_used == true
             character.coffee_crash
         end
-        puts "\nYour social score is now #{character.social} and coding score is #{character.coding_skill}. Remember to balance your social and coding score!".green
+        puts "\nYour social score is now #{character.social.round(1)} and coding score is #{character.coding_skill.round(1)}. Remember to balance your social and coding score!".green
         gets
     when "c" 
         character.coffee_drink
