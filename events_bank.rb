@@ -49,7 +49,7 @@ class DataBank
         options: [["Let him die and continue your work, you need to build an empire!", -15, 10], ["You rush over to Nisal and help him out, you know he'll be forever in your debt for this good deed.", 15, 0], ["Nisal looks desperately into your eyes but... You really need some caffeine in you right now, to SmoothMe!"]]
       },
       {
-        test: "You are just sitting coding away, then you notice that #{name} has something on their face!!!",
+        test: "You are just sitting coding away, then you notice that #{name} has accidentally drawn on their face!!!",
         options: [["Ignore it and code away... But it is still there in the back of your mind", 0, -2], ["You loudly point it out to them and make them feel embarrassed",  -5, 0], ["You realize the thing on their face kind of looks like a cup of coffee... Mmmmmm.. Coffee.."]]
       },
       {
@@ -62,14 +62,14 @@ class DataBank
       },
       {
         test: "Your train gets delayed in the morning and it's looking like you'll be late to class",
-        options: [["Call an uber to get their in time", 4, 4], ["Wait for the train, but get some more coding done", 0, 6], ["Whip out your coffee mug and instant coffee from your bag"]]
+        options: [["Call an uber to get there in time", 4, 4], ["Wait for the train, but get some more coding done", 0, 6], ["Whip out your coffee mug and instant coffee from your bag"]]
       },
       {
-        test: "You were having drinks last night, gettin fkn rowdy, but now you are finding it difficult to concentrate on your code...",
+        test: "You were having drinks last night, getting a bit rowdy, but now you are finding it difficult to concentrate on your code...",
         options: [["Charm the person next to get them to let you copy their work, you got this!", 6, -4], ["Meditate to clear your mind. Ommmmmmmm", 0, 4], ["Coffee was made for this!"]]
       },
       {
-        test: "Mark Zuckerburg has come in today to give the class a talk, but you feel an itch to code right now...",
+        test: "A famous developer/entrepreneur has come in today to give the class a talk, but you feel an itch to code right now...",
         options: [["Listen to his speech and be enlightened", 10, 5], ["Code away like a mad man", 0, 5], ["I could listen and code at the same time if I go get some coffee..."]]
       },
       {
@@ -84,6 +84,14 @@ class DataBank
         test: "You are at the club, having a boogie, when suddenly you remember that there are still more coding challenges to do. Do you:",
         options: [["Quickly reach for another drink and forget all other coding thoughts. Phew, that was a close one!", 5, -4], ["Push your way through the crowd and to the exit! You're on a mission here!", 0, 8], ["Order a espresso martini. You'll probably be able to think your way through the challenge with the caffeine boost!"]]
       },
+      {
+        test: "You read some advice by Steve Jobs. It suggests a certain ruthless approach to your career. Do you: ",
+        options: [["Accept that if Steve said it, it must be true. You resolve to put your own development before others'!", -5, 15], ["Dismiss this as unnecessarily jerky. You're probably smarter than Steve anyway...", 5, 5], ["Steve's theories are all well and good, but this is the real world and you need caffeine."]]
+      },
+      {
+        test: "#{teacher_name} offers to help you improve some code you've been working on. Do you: ",
+        options: [["Thank them, but suggest that you grab a beer instead! Much more fun.", 10, 0], ["Gratefully accept. Your code really does need work...", 2, 8], ["Duck out for a coffee, you can sort all this out later."]]
+      }
     ]
   end
 
