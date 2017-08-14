@@ -102,6 +102,13 @@ def game_credits_flow(character)
   end_game_menu(character)
 end
 
-
-
-
+def final_job(character)
+  "Google - the future is yours!"
+  "Facebook - the pay is good and it turns out Zuckerberg is an OK dude."
+  "Atlassian, one of Australia's fastest growing startups. You are considered an promising Junior Dev!"
+  "a new start up called OzBiz. Your pay is ordinary but you got options in the company! Let's hope it lasts till the float..."
+  "Commonwealth Bank working with their dev team. A solid job with good pay."
+  "working on HTML as Jim's Websites franchise. Well, at least you get to be your own boss, right?"
+  "the local coucil doing data entry. "
+  "at Woolworths working on the checkouts. On the plus side, you get double time on "
+end
