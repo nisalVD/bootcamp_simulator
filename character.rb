@@ -8,21 +8,21 @@ class Character
 
     def adjust_social(social_points)
         if social_points > 0
-            @social = @base_social * (social_points / 20.0) + @social
-            puts "\nYou gained #{@base_social * (social_points / 20.0)} social points!".green
+            @social = @base_social * (social_points / 15.0) + @social
+            puts "\nYou gained #{(@base_social * (social_points / 15.0)).round(1)} social points!".green
         elsif social_points < 0
-            @social = @social + social_points
-            puts "\nYou lost #{social_points} social points... Not going to have any friends at this rate...".green
+            @social = @social + (social_points / 15.0)
+            puts "\nYou lost #{(social_points / 15.0).round(1)} social points... Not going to have any friends at this rate...".green
         end
     end
 
     def adjust_coding_skill(coding_skill)
         if coding_skill > 0 
-            @coding_skill = @intellect * (coding_skill / 20.0) + @coding_skill
-            puts "\nYou gained #{@intellect * (coding_skill / 20.0)} coding points!".green
+            @coding_skill = @intellect * (coding_skill / 15.0) + @coding_skill
+            puts "\nYou gained #{(@intellect * (coding_skill / 15.0)).round(1)} coding points!".green
         elsif coding_skill < 0 
-            @coding_skill = @coding_skill + coding_skill
-            puts "\nYou lost #{coding_skill} coding points... Get back to work!".green
+            @coding_skill = @coding_skill + (coding_skill / 15.0)
+            puts "\nYou lost #{(coding_skill / 15.0).round(1)} coding points... Get back to work!".green
         end
     end
 
