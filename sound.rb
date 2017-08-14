@@ -9,8 +9,9 @@ def battle
 
         player.load('battle.mp3')
         player.toggle
-        gets
+        response = gets.chomp.downcase
         player.toggle
+        return response
         break
         player.thread.join
     end
@@ -25,8 +26,9 @@ def start_music
 
         player.load('Guile Theme.mp3')
         player.toggle
-        gets
+        literal_response = gets.strip
         player.toggle
+        return literal_response
         break
         player.thread.join
     end

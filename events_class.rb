@@ -18,16 +18,18 @@ class Events
       puts "\nA. ".blue + random_event[:options][0][0].blue
       puts "B. ".blue + random_event[:options][1][0].blue
       puts "C. ".blue + random_event[:options][2][0].blue
-      if random_event == events_bank[17]
-        battle
-      end
-      puts user_choice(random_event, character)
+      puts user_choice(random_event, character, events_bank)
     end
   end
 
 
-  def user_choice(random_event, character)
-    response = gets.chomp.downcase
+  def user_choice(random_event, character, events_bank)
+    if random_event == events_bank[17]
+      response = battle
+    else
+      response = gets.chomp.downcase
+    end
+
     case response
     when "a"
         character.adjust_social(random_event[:options][0][1]) #returns social points
