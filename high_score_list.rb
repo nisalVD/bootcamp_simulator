@@ -15,13 +15,13 @@ class HighScoreList
   def add_score(player, total_score)
     if File.file?('high_score_list.yaml')
       @scores = YAML.load_file('high_score_list.yaml')
-      @scores << [player.cyan, total_score.cyan, Date.today.cyan] 
+      @scores << [player.green, total_score.to_s.green, Date.today.to_s.green] 
       @scores = scores.sort_by { |entry| entry[2] }
       File.open('high_score_list.yaml', 'w') do |out|
         YAML.dump scores, out
       end
     else
-      @scores << [player.cyan, total_score.cyan, Date.today.cyan]
+      @scores << [player.green, total_score.to_s.green, Date.today.to_s.green]
       File.open('high_score_list.yaml', 'w') do |out|
         YAML.dump scores, out
       end
@@ -32,7 +32,7 @@ class HighScoreList
   def list_display
     if File.file?('high_score_list.yaml')
       @scores = YAML.load_file('high_score_list.yaml')
-      table = Terminal::Table.new :title => "Coder Academy - The Game: High Scores".cyan, :headings => ['Player Name'.cyan, 'Date'.cyan, 'Total Score'.cyan], :rows => rows
+      table = Terminal::Table.new :title => "Coder Academy - The Game: High Scores".blue, :headings => ['Player Name'.blue, 'Date'.blue, 'Total Score'.blue], :rows => rows
       rows = []
       scores.each do |entry|
         rows << entry
