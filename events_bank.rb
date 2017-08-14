@@ -64,6 +64,19 @@ class DataBank
         test: "Your train gets delayed in the morning and it's looking like you'll be late to class",
         options: [["Call an uber to get their in time", 4, 4], ["Wait for the train, but get some more coding done", 0, 6], ["Whip out your coffee mug and instant coffee from your bag"]]
       },
+      {
+        test: "You were having drinks last night, gettin fkn rowdy, but now you are finding it difficult to concentrate on your code...",
+        options: [["Charm the person next to get them to let you copy their work, you got this!", 6, -4], ["Meditate to clear your mind. Ommmmmmmm", 0, 4], ["Coffee was made for this!"]]
+      },
+      {
+        test: "Mark Zuckerburg has come in today to give the class a talk, but you feel an itch to code right now...",
+        options: [["Listen to his speech and be enligted", 10, 5], ["Code away like a mad man", 0, 5], ["I could listen and code at the same time if I go get some coffee..."]]
+      },
+      {
+        test: "A wild Ruegen appeared!",
+        options: [["Test your coding skills in battle and try to catch it", 0, 15], ["Make friends with this magestic creature, you never know when you might need a Ruegen", 5, 6], ["Leave him alone in the wild and go get some coffee"]]
+      },
+
     ]
   end
 
