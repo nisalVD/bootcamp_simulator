@@ -1,4 +1,5 @@
 def end_of_game(character)  
+  
   system 'clear'
   puts "Put some text here"
   
@@ -8,23 +9,7 @@ def end_of_game(character)
 end
 
 def high_scores_add(character)
-  name = character.name
-  coding = character.coding.round(0)
-  social = character.social.round(0)
-  #total = character.total_score
-  job = character.job
 
-  player = {
-    name: name,
-    coding: coding,
-    social: social,
-    job: job,
-    date: Date.today
-  }
-
-  player_score = HighScore.new(player)
-  high_scores.add_score(player_score)
-  #high_scores.update_yaml
 end
 
 def end_game_menu(character)
@@ -103,12 +88,23 @@ def game_credits_flow(character)
 end
 
 def final_job(character)
-  "Google - the future is yours!"
-  "Facebook - the pay is good and it turns out Zuckerberg is an OK dude."
-  "Atlassian, one of Australia's fastest growing startups. You are considered an promising Junior Dev!"
-  "a new start up called OzBiz. Your pay is ordinary but you got options in the company! Let's hope it lasts till the float..."
-  "Commonwealth Bank working with their dev team. A solid job with good pay."
-  "working on HTML as Jim's Websites franchise. Well, at least you get to be your own boss, right?"
-  "the local coucil doing data entry. "
-  "at Woolworths working on the checkouts. On the plus side, you get double time on "
+  final_score = character.findscore
+  case final_score
+    when
+      job = "Google - the future is yours!"
+    when
+      job = "Facebook - the pay is good and it turns out Zuckerberg is an OK dude."
+    when
+      job = "Atlassian, one of Australia's fastest growing startups. You are considered an promising Junior Dev!"
+    when
+      job = "a new start up called OzBiz. Your pay is ordinary but you got options in the company! Let's hope it lasts till the float..."
+    when
+      job = "Commonwealth Bank working with their dev team. A solid job with good pay."
+    when
+      job = "working on HTML as Jim's Websites franchise. Well, at least you get to be your own boss, right?"
+    when
+      job = "the local coucil doing data entry. It's $24 an hour, but you get all the coffee you can drink."
+    when
+      job = "at Woolworths working on the checkouts. On the plus side, you get double time on Sundays."
+  end
 end
