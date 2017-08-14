@@ -105,8 +105,8 @@ def game_credits_flow(character, job)
   game_credits = [
     "ASCII art courtesy of Andreas Freise: (http://www.ascii-art.de)", 
     "Computer scientist biographies courtesy of Wikiedia (https://en.wikipedia.org)",
-    "This program was created in Ruby for the course requirements for Coder Academy Fast Track, semester 2 2017. It was programmed by: Simon Dwyer, Nathaniel Mether, George, Nisval",
-    "Thank you to our teachers: Patrick Smith, Matt Matt McKenzie and Reugen Aschenbrenner",
+    "This program was created in Ruby for the course requirements for Coder Academy Fast Track, semester 2 2017. It was programmed by: Simon Dwyer, Nathaniel Mether, George Kosmas, Nisal Don",
+    "Thank you to our teachers: Patrick Smith, Matt McKenzie and Reugen Aschenbrenner",
     "And to all those computer scientists, coders and hackers who paved the way..."
   ]
 
