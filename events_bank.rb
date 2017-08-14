@@ -34,11 +34,11 @@ class DataBank
       },
       {
         test: "#{name} keeps interupting #{teacher_name} during class. Do you: ",
-        options: [["Raise your hand and ask for them to be removed from class.", 18, -8], ["Wait till break time and have a quiet word.", 10, 0], ["You can't hear anyway, might as well grab a cappuccino."]]
+        options: [["Raise your hand and ask for them to be removed from class.", -8, 18], ["Wait till break time and have a quiet word.", 10, 0], ["You can't hear anyway, might as well grab a cappuccino."]]
       },
       {
         test: "#{name} asks you to attend a ruby meetup with him",
-        options: [["Accept and attend the meetup with #{name}", 10, 5], ["Decline #{name} offer and work on your personal project", -5, 10], ["Screw this I want coffee"]]
+        options: [["Accept and attend the meetup with them", 10, 5], ["Decline their offer and work on your personal project", -5, 10], ["Screw this I want coffee"]]
       },
       {
         test: "#{teacher_name} makes a typo during their code demo",

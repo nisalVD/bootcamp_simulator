@@ -119,7 +119,7 @@ def setup_character
       puts "\n\nPress enter to start the course!".blue
       gets
       welcome(character)
-      #end_of_game(character) # skip to game end for testing only!
+      # end_of_game(character) # skip to game end for testing only!
   end
 
   setup_intel(character, allocation_points)
