@@ -32,8 +32,8 @@ class HighScoreList
   def list_display
     if File.file?('high_score_list.yaml')
       @scores = YAML.load_file('high_score_list.yaml')
-      table = Terminal::Table.new :title => "Coder Academy - The Game: High Scores".blue, :headings => ['Player Name'.blue, 'Date'.blue, 'Total Score'.blue], :rows => rows
       rows = []
+      table = Terminal::Table.new :title => "Coder Academy - The Game: High Scores".blue, :headings => ['Player Name'.blue, 'Date'.blue, 'Total Score'.blue], :rows => rows
       scores.each do |entry|
         rows << entry
       puts table
