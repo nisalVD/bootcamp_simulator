@@ -12,18 +12,32 @@ class HighScoreList
   end
 
   #this method first checks whether a YAML file containing player scores (as an array of arrays) exists. If it does, it loads the file, appends the current player score, sorts the score list according to score size, and closes the file. If not, it creates a new file with the current player score.
-  def add_score(player, total_score)
+  def add_score(character)
     if File.file?('high_score_list.yaml')
       @scores = YAML.load_file('high_score_list.yaml')
+<<<<<<< HEAD
       @scores << [player.green, total_score, Date.today.to_s.green] 
       @scores = scores.sort_by { |entry| entry[1] }.reverse
+=======
+      player = {
+        name: character.name,
+        total_score: character.findscore,
+        date: Date.today,
+      }
+      @scores << player 
+      @scores = scores.sort_by { |entry| entry[2] }
+>>>>>>> 2ffd5e24f71433e78f6a88238a1e91b1e7ef1736
       File.open('high_score_list.yaml', 'w') do |out|
-        YAML.dump scores, out
+        YAML.dump scores.to_yaml, out
       end
     else
+<<<<<<< HEAD
       @scores << [player.green, total_score, Date.today.to_s.green]
+=======
+      @scores << player
+>>>>>>> 2ffd5e24f71433e78f6a88238a1e91b1e7ef1736
       File.open('high_score_list.yaml', 'w') do |out|
-        YAML.dump scores, out
+        YAML.dump scores.to_yaml, out
       end
     end        
   end

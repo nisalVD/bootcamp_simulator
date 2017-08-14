@@ -118,7 +118,8 @@ def setup_character
       puts "\n\nSet up successful!".green
       puts "\n\nPress enter to start the course!".blue
       gets
-      welcome(character)
+      #welcome(character)
+      end_of_game(character)
   end
 
   setup_intel(character, allocation_points)
