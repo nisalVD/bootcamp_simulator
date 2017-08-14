@@ -38,7 +38,7 @@ class DataBank
       },
       {
         test: "#{name} asks you to attend a ruby meetup with him",
-        options: [["Accept and attend the meetup with #{name}", 10, 5], ["Decline #{name} offer and work on your personal project", -5, 10], ["Screw this I want coffee"]]
+        options: [["Accept and attend the meetup with them", 10, 5], ["Decline their offer and work on your personal project", -5, 10], ["Screw this I want coffee"]]
       },
       {
         test: "#{teacher_name} makes a typo during their code demo",

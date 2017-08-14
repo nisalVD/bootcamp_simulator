@@ -1,6 +1,8 @@
 
 def end_of_game(character)  
     final_score = character.findscore
+    high_score_list = HighScoreList.new
+    high_score_list.add_score(character, final_score)
     
     case
       when final_score > 200
@@ -27,19 +29,15 @@ def end_of_game(character)
       when final_score <= 30
         job = "at Woolworths working the checkouts." 
         job_text = "On the plus side, you get double time on Sundays."
-      end
+    end
 
   system 'clear'
-  puts "After a gruelling course, your final coding ability is #{character.coding_skill} and your social skill is #{character.social}.".green
+  puts "After a gruelling course, your final coding ability is #{character.coding_skill} and your social skill is #{character.social}. You calculated developer rating is...#{final_score}".green
   puts "\nYou got a job at #{job}".cyan
-  puts "...\n#{job_text}".cyan
-  
+  puts "...\n#{job_text}".cyan 
   puts "\nEnter to continue...".blue
-  high_score_list = HighScoreList.new
-  final_score = character.findscore
-  high_score_list.add_score(character, final_score)
-  end_game_menu(character, job)
   gets
+  end_game_menu(character, job)
 end
 
 def end_game_menu(character, job)
@@ -103,11 +101,11 @@ end
 
 def game_credits_flow(character, job)
   game_credits = [
-    "ASCII art courtesy of Andreas Freise: (http://www.ascii-art.de)", 
-    "Computer scientist biographies courtesy of Wikiedia (https://en.wikipedia.org)",
     "This program was created in Ruby for the course requirements for Coder Academy Fast Track, semester 2 2017. It was programmed by: Simon Dwyer, Nathaniel Mether, George Kosmas, Nisal Don",
     "Thank you to our teachers: Patrick Smith, Matt McKenzie and Reugen Aschenbrenner",
-    "And to all those computer scientists, coders and hackers who paved the way..."
+    "ASCII art courtesy of Andreas Freise: (http://www.ascii-art.de)", 
+    "Computer scientist biographies courtesy of Wikiedia (https://en.wikipedia.org)",
+    "Thank you to all those computer scientists, coders and hackers who paved the way..."
   ]
 
   system 'clear'
