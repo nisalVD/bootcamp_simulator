@@ -18,10 +18,10 @@ class Character
 
     def adjust_coding_skill(coding_skill)
         if coding_skill > 0 
-            @coding_skill = @intellect * (coding_skill / 15.0) + @coding_skill
+            @coding_skill = @intellect * (coding_skill / 15.0).round(1) + @coding_skill
             puts "\nYou gained #{(@intellect * (coding_skill / 15.0)).round(1)} coding points!".green
         elsif coding_skill < 0 
-            @coding_skill = @coding_skill + (coding_skill / 15.0)
+            @coding_skill = @coding_skill + (coding_skill / 15.0).round(1)
             puts "\nYou lost #{(coding_skill / 15.0).round(1)} coding points... Get back to work!".green
         end
     end
@@ -98,7 +98,7 @@ class Character
         social = @social
         coding_skill = @coding_skill
         initial_score = social - coding_skill
-        final_score = social + coding_skill - initial_score.abs
+        final_score = (social + coding_skill - initial_score.abs).round(0)
         return final_score
     end
 

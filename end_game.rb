@@ -32,11 +32,11 @@ def end_of_game(character)
     end
 
   system 'clear'
-  puts "After a gruelling course, your final coding ability is #{character.coding_skill} and your social skill is #{character.social}. You calculated developer rating is...#{final_score}".green
+  puts "After a gruelling course, your final coding ability is #{character.coding_skill.round(1)} and your social skill is #{character.social.round(1)}. You calculated developer rating is...#{final_score}".green
   puts "\nYou got a job at #{job}".cyan
   puts "...\n#{job_text}".cyan 
   puts "\nEnter to continue...".blue
-  gets
+  victory
   end_game_menu(character, job)
 end
 
