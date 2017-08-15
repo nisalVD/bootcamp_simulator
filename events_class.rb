@@ -52,7 +52,7 @@ class Events
         gets
     else
         puts "You didn't select A, B or C - try again!".red
-        user_choice(random_event, character)
+        user_choice(random_event, character, events_bank)
     end
   end
   
