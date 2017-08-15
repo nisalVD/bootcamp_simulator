@@ -1,6 +1,4 @@
-CODER ACADEMY  =====
-
-The Game ====== 
+CODER ACADEMY  ...  The Game 
  
 Created for Coder Academy Fast Track course: coderacademy.edu.au/fast-track
 ________________________
