@@ -1,6 +1,6 @@
-=====  CODER ACADEMY  =====
+CODER ACADEMY  =====
 
-  ====== The Game ====== 
+The Game ====== 
  
 Created for Coder Academy Fast Track course: coderacademy.edu.au/fast-track
 ________________________
@@ -53,6 +53,7 @@ milestones.rb
 
 end_game.rb
 
+
 ** Game class files **
 
 events_bank.rb
@@ -63,9 +64,11 @@ events_class.rb
 
 high_score_list.rb
 
+
 ** Game data files **
 
 high_score_list.yaml
+
 
 ** Game music files **
 
