@@ -5,7 +5,7 @@ ________________________
 
 * To run game: ruby game.rb
 
-* Project members: George Kosmas, Nisal Don, Simon Dwyer, Nathaniel Mether
+* Project members: George, Nisal Don, Simon Dwyer, Nathaniel Mether
 * GitHub: https://github.com/nisalVD/bootcamp_simulator
 
 ________________________
@@ -17,7 +17,7 @@ Install: gem install colorize
 
 GitHub: https://github.com/fazibear/colorize
 
-** Termina Table **
+** Terminal Table **
 
 Install: gem install terminal-table
 
