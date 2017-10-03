@@ -4,6 +4,7 @@ Created for Coder Academy Fast Track course: coderacademy.edu.au/fast-track
 ________________________
 
 * To run game: ruby game.rb
+* Planning docs in /planning_and_docs
 
 * Project members: George, Nisal Don, Simon Dwyer, Nathaniel Mether
 * GitHub: https://github.com/nisalVD/bootcamp_simulator
